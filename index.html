@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amigo Secreto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="hero" role="banner">
+    <div class="hero-inner">
+      <h1 class="hero-title">Amigo Secreto</h1>
+      <p class="hero-sub">Organize seu sorteio com facilidade e alegria ✨</p>
+      <div class="hero-illustration" aria-hidden="true">
+        <svg width="220" height="140" viewBox="0 0 220 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#FDE2F4"/>
+              <stop offset="100%" stop-color="#DBEAFE"/>
+            </linearGradient>
+          </defs>
+          <circle cx="110" cy="70" r="64" fill="url(#g1)"/>
+          <path d="M85 78c-10 2-18-6-18-16 0-9 8-16 17-16s16 7 16 16v17l-15-1z" fill="#A78BFA"/>
+          <path d="M135 78c10 2 18-6 18-16 0-9-8-16-17-16s-16 7-16 16v17l15-1z" fill="#F0ABFC"/>
+          <path d="M70 84c18 6 32 6 80 0" stroke="#7C3AED" stroke-width="6" stroke-linecap="round"/>
+          <path d="M88 88c-10 4-20 4-26 0" stroke="#7C3AED" stroke-width="6" stroke-linecap="round"/>
+          <path d="M132 88c10 4 20 4 26 0" stroke="#7C3AED" stroke-width="6" stroke-linecap="round"/>
+          <path d="M110 66c8-12 24-4 16 8-4 6-10 9-16 14-6-5-12-8-16-14-8-12 8-20 16-8z" fill="#EF85FF"/>
+        </svg>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    
+
+    <section class="card" aria-labelledby="sec-cadastro">
+      <h2 id="sec-cadastro">Cadastro de amigos</h2>
+      <form id="form-amigo" novalidate>
+        <label for="nome">Nome do amigo</label>
+        <div class="row">
+          <input id="nome" name="nome" type="text" maxlength="60" placeholder="Digite um nome e pressione Enter ou clique em Adicionar" autocomplete="off" />
+          <button id="btn-adicionar" type="submit" class="btn primary">Adicionar</button>
+        </div>
+        <p id="erro" class="help error" role="alert" aria-live="polite"></p>
+      </form>
+
+      <div class="lista-wrapper">
+        <div class="lista-header">
+          <h3>Lista de amigos</h3>
+          <button id="btn-limpar" class="btn ghost" type="button" aria-label="Limpar lista">Limpar</button>
+        </div>
+        <ul id="lista-amigos" class="lista" aria-live="polite" aria-label="Amigos cadastrados"></ul>
+        <p id="vazio" class="help muted">Nenhum nome adicionado ainda.</p>
+      </div>
+
+      <div class="acoes">
+        <button id="btn-sortear" class="btn success" type="button" disabled>Sortear Amigo</button>
+        <button id="btn-sortear-pares" class="btn success" type="button" disabled>Sortear Pares</button>
+      </div>
+
+      <div class="resultado" aria-live="polite">
+        <p id="resultado-texto"></p>
+      </div>
+
+      <div class="pares" aria-live="polite" aria-labelledby="sec-pares">
+        <h3 id="sec-pares">Pares sorteados</h3>
+        <ul id="lista-pares" class="lista"></ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small>Amigo Secreto</small>
+    </footer>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
